@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Microlino Reichweite" />
+  <meta name="theme-color" content="#111827" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Microlino Reichweite</title>
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Microlino Reichweite</p>
+        <h1>Private Reichweiten-App</h1>
+      </div>
+      <div class="badge">15 kWh · 228 km WLTP</div>
+    </header>
+
+    <section class="card grid2">
+      <div>
+        <span class="label">Gelernte Reichweite</span>
+        <strong id="learnedRange">Noch keine Daten</strong>
+      </div>
+      <div>
+        <span class="label">WLTP-Basis</span>
+        <strong>228 km</strong>
+      </div>
+    </section>
+
+    <section class="card" id="setupCard">
+      <h2>Fahrt starten</h2>
+      <label for="startBattery">Akkustand beim Start (%)</label>
+      <input id="startBattery" type="number" inputmode="decimal" min="1" max="100" step="1" placeholder="z. B. 82" />
+      <button id="startBtn" class="primary">Fahrt starten</button>
+      <p class="hint">Die App nutzt GPS. Auf dem iPhone musst du Standortzugriff erlauben.</p>
+    </section>
+
+    <section class="card hidden" id="activeCard">
+      <h2>Fahrt läuft</h2>
+      <div class="liveStats">
+        <div><span class="label">Strecke</span><strong id="liveDistance">0,00 km</strong></div>
+        <div><span class="label">Tempo</span><strong id="liveSpeed">0 km/h</strong></div>
+        <div><span class="label">Fahrtyp</span><strong id="liveType">Wird ermittelt</strong></div>
+        <div><span class="label">Höhenänderung</span><strong id="liveElevation">0 m</strong></div>
+      </div>
+      <label for="endBattery">Akkustand am Ende (%)</label>
+      <input id="endBattery" type="number" inputmode="decimal" min="0" max="100" step="1" placeholder="z. B. 74" />
+      <button id="stopBtn" class="danger">Fahrt beenden & speichern</button>
+    </section>
+
+    <section class="card hidden" id="resultCard">
+      <h2>Letzte Auswertung</h2>
+      <div id="resultText" class="result"></div>
+    </section>
+
+    <section class="card">
+      <div class="sectionHeader">
+        <h2>Gespeicherte Fahrten</h2>
+        <button id="exportBtn" class="secondary">Export</button>
+      </div>
+      <div id="tripList" class="tripList"></div>
+    </section>
+
+    <section class="card muted">
+      <h2>Nächster Ausbauschritt</h2>
+      <p>Wetter- und Winddaten sind im Datenmodell vorbereitet. Für den echten Abruf braucht die Web-App später eine Wetter-API-Anbindung.</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

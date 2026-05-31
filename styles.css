@@ -1,0 +1,28 @@
+:root { color-scheme: dark; --bg:#0b1020; --card:#151b2f; --text:#f8fafc; --muted:#94a3b8; --line:#263044; --accent:#60a5fa; --danger:#fb7185; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:linear-gradient(180deg,#0b1020,#111827); color:var(--text); }
+.app { max-width:720px; margin:0 auto; padding:24px 16px 48px; }
+.hero { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; margin-bottom:18px; }
+h1 { margin:0; font-size:30px; line-height:1.05; }
+h2 { margin:0 0 14px; font-size:20px; }
+.eyebrow,.label,.hint { color:var(--muted); }
+.eyebrow { margin:0 0 6px; text-transform:uppercase; letter-spacing:.08em; font-size:12px; }
+.badge { border:1px solid var(--line); border-radius:999px; padding:8px 10px; color:#bfdbfe; white-space:nowrap; font-size:13px; }
+.card { background:rgba(21,27,47,.94); border:1px solid var(--line); border-radius:22px; padding:18px; margin:14px 0; box-shadow:0 12px 32px rgba(0,0,0,.22); }
+.grid2,.liveStats { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.label { display:block; font-size:13px; margin-bottom:5px; }
+strong { font-size:22px; }
+label { display:block; margin:14px 0 8px; color:#dbeafe; }
+input { width:100%; border:1px solid var(--line); background:#0f172a; color:var(--text); border-radius:14px; padding:15px; font-size:20px; }
+button { border:0; border-radius:14px; padding:14px 16px; font-weight:700; color:#07111f; margin-top:14px; width:100%; font-size:16px; }
+.primary { background:var(--accent); }
+.danger { background:var(--danger); }
+.secondary { width:auto; margin:0; background:#cbd5e1; }
+.hidden { display:none; }
+.sectionHeader { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.trip { border-top:1px solid var(--line); padding:12px 0; }
+.trip:first-child { border-top:0; }
+.trip small { color:var(--muted); display:block; margin-top:4px; }
+.result { line-height:1.55; }
+.muted { color:#cbd5e1; }
+@media (max-width:480px){ .hero{display:block}.badge{display:inline-block;margin-top:12px}.grid2,.liveStats{grid-template-columns:1fr} }
